@@ -48,6 +48,12 @@ export function Home() {
 
   function handleChangeInputText(text: string) {
     setSearchText(text);
+    if (searchText.trim() !== "") {
+      const dataFiltered = data.filter((text) =>
+        text.service_name.includes(searchText)
+      );
+      setSearchListData(dataFiltered);
+    }
   }
 
   useFocusEffect(
@@ -60,8 +66,8 @@ export function Home() {
     <>
       <Header
         user={{
-          name: "Rocketseat",
-          avatar_url: "https://i.ibb.co/ZmFHZDM/rocketseat.jpg",
+          name: "Rodrigo",
+          avatar_url: "https:github.com/rodrigorvsn.png",
         }}
       />
       <Container>
